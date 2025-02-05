@@ -32,7 +32,7 @@ public class LinkedListTester {
 		tester.listItems();
 
 		//isItemInList
-		
+		System.out.println("Checking if Nursing-Building is in the list...");
 		tester.isItemInList("Nursing-Building");
 
 	}
