@@ -29,10 +29,6 @@ public class LinkedListImpl implements LinkedList {
 			current = current.next;
 		}
 		current.next = new ListItem(thisItem);
-
-
-		
-		System.out.println("hello from addItem in LinkedListImpl - the item passed in: " + thisItem);
 	
 		return null;
 	}
@@ -45,10 +41,10 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public void listItems() {
-		ListItem current = head;
-		while(current != null) {
-			System.out.println(current.data);
-			current = current.next;
+		ListItem current = head;									//Start at the head of the list
+		while(current != null) {									//While there exists a ListItem
+			System.out.println(current.data);						//Print the data of the current ListItem
+			current = current.next;									//Move to the next ListItem
 		}
 		
 	}
@@ -60,25 +56,58 @@ public class LinkedListImpl implements LinkedList {
 		}
 
 		ListItem current = head;
-		while(current.next != null) {				//While there exists a ListItem after the current ListItem
-			if(current.next.data.equals(thisItem))			//If the data of the next ListItem is the data we want to delete
-				current.next = current.next.next;	//Set the pointer of the current ListItem to the ListItem after the next ListItem (1->2->3 becomes 1->3)
+		while(current.next != null) {								//While there exists a ListItem after the current ListItem
+			if(current.next.data.equals(thisItem))					//If the data of the next ListItem is the data we want to delete
+				current.next = current.next.next;					//Set the pointer of the current ListItem to the ListItem after the next ListItem (1->2->3 becomes 1->3)
 			else
 				current = current.next;
 		}
-		return null;
+		return false;												//Return false if the item to delete was not found
 	}
 
 	@Override
 	public Boolean insertBefore(String newItem, String itemToInsertBefore) {
-		// TODO Auto-generated method stub
-		return null;
+	    if (head == null) {
+	        return false; 											//Return false if the list is empty
+	    }
+
+		if (head.data.equals(itemToInsertBefore)) { 				// Special case for inserting before the head
+			ListItem newHead = new ListItem(newItem);
+			newHead.next = head;
+			head = newHead;
+			return true;
+		}
+
+	    ListItem current = head;
+	    while (current.next != null) { 								//While there exists a ListItem after the current ListItem
+	        if (current.next.data.equals(itemToInsertBefore)) { 	//If the data of the next ListItem is the data we want to insert before
+	            ListItem temp = current.next; 						//Create a temporary ListItem to store the next ListItem
+	            current.next = new ListItem(newItem); 				//Set the pointer of the current ListItem to the new ListItem
+	            current.next.next = temp; 							//Set the pointer of the new ListItem to the temporary ListItem
+	            return true;
+	        }
+	        current = current.next; 								//Move to the next ListItem
+	    }
+	    return false; 												//Return false if the item to insert before was not found
 	}
 
 	@Override
 	public Boolean insertAfter(String newItem, String itemToInsertAfter) {
-		// TODO Auto-generated method stub
-		return null;
+		if (head == null) {
+			return false; 											//Return false if the list is empty
+		}
+
+	    ListItem current = head;
+	    while (current != null) { 									//While there exists a ListItem after the current ListItem
+	        if (current.next.data.equals(itemToInsertAfter)) { 		//If the data of the next ListItem is the data we want to insert before
+	            ListItem temp = current.next; 						//Create a temporary ListItem to store the next ListItem
+	            current.next = new ListItem(newItem); 				//Set the pointer of the current ListItem to the new ListItem
+	            current.next.next = temp; 							//Set the pointer of the new ListItem to the temporary ListItem
+	            return true;
+	        }
+	        current = current.next; 								//Move to the next ListItem
+	    }
+		return false; 												//Return false if the item to insert before was not found
 	}
 
 	@Override
