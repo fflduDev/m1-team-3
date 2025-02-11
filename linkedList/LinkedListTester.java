@@ -8,23 +8,36 @@ public class LinkedListTester {
 
 		
 		LinkedList tester = new LinkedListImpl();
-		tester.addItem("Bannow Science Center");
+
+		//Create (insert) 4 stations
+		tester.addItem("Bannow Science Center");							
 		tester.addItem("Rec-Plex");
 		tester.addItem("Library");
 		tester.addItem("Engineering Annex");
-
-		tester.listItems();
+		
+		//List the items
+		tester.listItems();															
 		System.out.println("------------------------------------------------");
-		//Insert Before
-		System.out.println("Adding Nursing Building before Bannow Science Center...");
-		tester.insertBefore("Nursing-Building", "Bannow Science Center");
-		tester.listItems();
 
+		//Check if item is in list (False)
+		System.out.println("Checking if Nursing-Building is in the list...");
+		tester.isItemInList("Nursing-Building");
+
+		System.out.println("Checking if Engineering Annex is in the list...");
+		tester.isItemInList("Engineering Annex");
+		
 		System.out.println("------------------------------------------------");
 
 		//Delete Item
 		System.out.println("Deleting the Rec-Plex...");
 		tester.deleteItem("Rec-Plex");
+		tester.listItems();
+
+		System.out.println("------------------------------------------------");
+
+		//Insert Before
+		System.out.println("Adding Nursing Building before Bannow Science Center...");
+		tester.insertBefore("Nursing-Building", "Bannow Science Center");
 		tester.listItems();
 
 		System.out.println("------------------------------------------------");
@@ -35,10 +48,6 @@ public class LinkedListTester {
 		tester.listItems();
 
 		System.out.println("------------------------------------------------");
-
-		//isItemInList
-		System.out.println("Checking if Nursing-Building is in the list...");
-		tester.isItemInList("Nursing-Building");
 
 	}
 

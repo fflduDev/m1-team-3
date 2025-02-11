@@ -9,10 +9,12 @@ public class LinkedListImpl implements LinkedList {
 		ListItem current = head;
 		while(current != null) {
 			if(current.data.equals(thisItem)) {
+				System.out.println("True, " + thisItem + " is in the list.");
 				return true;
 			}
 			current = current.next;
 		}
+		System.out.println("False, " + thisItem + " is not in the list.");
 
 		return null;
 	}
@@ -35,8 +37,14 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public Integer itemCount() {
-		// TODO Auto-generated method stub
-		return null;
+		int count = 0;
+		ListItem current = head;									
+		while(current != null) {									
+			count ++;					
+			current = current.next;									
+		}
+		System.out.println("Number of items in the list: " + count);
+		return count;
 	}
 
 	@Override
