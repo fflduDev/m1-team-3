@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StackTester",
+            "request": "launch",
+            "mainClass": "stack.StackTester",
+            "projectName": "m1-team-3_f4769ef8"
+        },
+        {
+            "type": "java",
             "name": "LinkedListTester",
             "request": "launch",
             "mainClass": "linkedList.LinkedListTester",
