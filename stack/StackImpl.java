@@ -82,9 +82,12 @@ public class StackImpl implements Stack {
 
 	@Override
 	public void display() {
-		for (int i = 0; i < stack.length; i++) {				//For each element in the stack
-			System.out.println(stack[i]);						//Print the element
-		}		
+		System.out.println("===============================");
+            for (String stack1 : stack) {
+                //For each element in the stack
+                System.out.println(stack1); //Print the element
+            }
+			System.out.println("===============================");
 	}
  
 
