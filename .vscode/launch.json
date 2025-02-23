@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StagBusClient",
+            "request": "launch",
+            "mainClass": "app.StagBusClient",
+            "projectName": "m1-team-3_f4769ef8"
+        },
+        {
+            "type": "java",
+            "name": "QueueTester",
+            "request": "launch",
+            "mainClass": "queue.QueueTester",
+            "projectName": "m1-team-3_f4769ef8"
+        },
+        {
+            "type": "java",
             "name": "StackTester",
             "request": "launch",
             "mainClass": "stack.StackTester",

@@ -3,7 +3,11 @@ package linkedList;
 public class LinkedListTester {
 
 	public static void main(String[] args) {
-		
+		runLinkedListTest();
+	}
+
+		public static void runLinkedListTest() {
+
 		LinkedList tester = new LinkedListImpl();
 
 		//Create (insert) 4 stations

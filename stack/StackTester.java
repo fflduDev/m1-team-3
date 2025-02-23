@@ -3,35 +3,44 @@ package stack;
 public class StackTester {
 
 	public static void main(String[] args) {
+		runStackTests();
+	}
 
+	public static void runStackTests() {
 		Stack stackTester = new StackImpl();
 		
-		stackTester.setCapacity(10);
+		stackTester.setCapacity(9);			//Set the capacity of the stack
 
-		stackTester.push("Jan");
+		stackTester.push("Jan");					//Add elements to the stack
 		stackTester.push("Sean");
 		stackTester.push("Michael M");
 		stackTester.push("Hunter");
-		stackTester.push("Ronnie");
+		stackTester.push("Ronny");
 		stackTester.push("Michael C");
-		stackTester.push("Paul");
-		stackTester.push("James");
+
+		stackTester.display();						//Display the stack
+
+		System.out.println("Peeking the stack");	//Peek the stack
+		stackTester.peek();
+		stackTester.pop();							//Remove an element from the stack
+		stackTester.display();						//Display the stack
+		stackTester.peek();							//Peek the stack
+
+		stackTester.push("Paul");					//Add elements to the stack
 		stackTester.push("Jasiu");
 
-		stackTester.display();
-
-		System.out.println("Popping the top element");
-		stackTester.pop();
+		stackTester.peek();							//Peek the stack
 		
-		stackTester.display();
+		stackTester.pop();							//Remove all elements from the stack
+		stackTester.pop();
+		stackTester.pop();
+		stackTester.pop();
+		stackTester.pop();
+		stackTester.pop();
+		stackTester.pop();
+		stackTester.isEmpty();						//Check if the stack is empty
+		stackTester.display();						//Display the stack
 
-
-
-
-
-	}
-	
-	public static void runTests(Stack stack) {
 	 	
 	}
 
