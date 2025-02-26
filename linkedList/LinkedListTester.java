@@ -18,7 +18,6 @@ public class LinkedListTester {
 		
 		//List the items
 		tester.listItems();															
-		System.out.println("------------------------------------------------");
 
 		//Check if item is in list (False)
 		System.out.println("Checking if Nursing-Building is in the list...");

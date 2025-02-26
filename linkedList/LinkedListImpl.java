@@ -117,11 +117,5 @@ public class LinkedListImpl implements LinkedList {
 	    }
 		return false; 												//Return false if the item to insert before was not found
 	}
-
-	@Override
-	public void sort() {
-		
-		
-	}
 	
 }
